@@ -30,6 +30,83 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+ <script src="js/jquery.js"></script>
+
+<script type="text/javascript">
+                 //When the DOM document is loaded in the browser
+
+            $(document).ready(function () {
+        
+                //When the DOM document is loaded in the browser
+
+            $("#navHome, #navPageTop").click(function (event) {
+
+                  $("#home, #page-top").fadeIn(500);
+                  $("#services, #portfolio, #portfolio2, #about, #team, #contact").fadeOut(50);
+
+
+                });
+              
+              $("#navServices, #navServices2").click(function (event) {
+
+                  $("#services").fadeIn(500);
+                  $("#home, #portfolio, #portfolio2, #about, #team, #contact").fadeOut(50);
+
+
+                });
+
+
+              $("#navPort").click(function (event) {
+
+                  $("#portfolio, #portfolio2").fadeIn(500);
+                  $("#home, #services,  #about, #team, #contact").fadeOut(50);
+
+
+                });
+
+
+              $("#navAbout").click(function (event) {
+
+                  $("#about").fadeIn(500);
+                  $("#home, #services, #portfolio, #portfolio2, #team, #contact").fadeOut(50);
+
+
+                });
+  //"#home, #services, #portfolio, #about,  #team, #contact" 
+
+              $("#navTeam").click(function (event) {
+
+                  $("#team").fadeIn(500);
+                  $("home, #services, #portfolio, #portfolio2, #about, #contact").fadeOut(50);
+
+
+                });
+
+               $("#navContact").click(function (event) {
+
+                  $("#contact").fadeIn(500);
+                  $("home, #services, #portfolio, #portfolio2, #team, #about").fadeOut(50);
+
+
+                });
+
+              /*$("#navSponsors").click(function (event) {
+
+                  $("#").fadeIn(500);
+                  $("").fadeOut.(50);
+
+                });
+
+             */
+
+              });
+
+     
+        </script>
+
 </head>
 
 <body id="page-top" class="index">
@@ -45,29 +122,29 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <img src="../img/htlogo.gif" alt="" height="50" width="50">
-                <a class="navbar-brand page-scroll" href="#page-top">Hookipa Professionals</a>
+                <img src="img/htlogo.gif" alt="" height="50" width="50">
+                <a class="navbar-brand page-scroll" href="#page-top" id="navPageTop" >Hookipa Professionals</a>
             </div> 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
-                        <a href="#page-top"></a>
+                        <a href="#home" id="navHome"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Hookipa</a>
+                        <a  href="#services" id="navServices">Hookipa</a><!--class="page-scroll"-->
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Mission</a>
+                        <a  href="#portfolio" id="navPort" >Mission</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">Our Story</a>
+                        <a  href="#about" id="navAbout" >Our Story</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#team">Team</a>
+                        <a href="#team" id="navTeam" >Team</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a  href="#contact" id="navContact" >Contact</a>
                     </li>
                 </ul>
             </div>
@@ -78,12 +155,12 @@
     </nav>
 
     <!-- Header -->
-    <header>
+    <header id="home">
         <div class="container">
             <div class="intro-text">
                 <div class="intro-lead-in" font size="6">It's not what's in your home.</div>
                 <div class="intro-heading">It's what's in your heart.</div>
-                <a href="#services" class="page-scroll btn btn-xl">Welcome to Hookipa!</a>
+                <a href="#services" id="navServices2"class="page-scroll btn btn-xl">Welcome to Hookipa!</a>
                 
             </div>
             
@@ -91,7 +168,7 @@
     </header>
 
     <!-- Services Section -->
-    <section id="services">
+    <section id="services" style="background-color: rgba(255, 255, 255, 0.8); display: none;" >
 
         <div class="container">
             <div class="row">
@@ -147,16 +224,18 @@
     </section>
 
     <!-- Portfolio Grid Section -->
-    <section style="background-attachment:fixed; background-repeat:none; background-image: url(../img/header-bg.jpg); background-position:center center;-webkit-background-size:cover;-moz-background-size:cover;background-size:cover;-o-background-size:cover;text-align:center;" id="portfolio" >
-        <div class="container">
+    <section style="background-attachment:fixed; background-repeat:none; background-image: url(img/header-bg.jpg); background-position:center center;-webkit-background-size:cover;-moz-background-size:cover;background-size:cover;-o-background-size:cover;text-align:center;">
+        <div  class="container"id="portfolio" style="display: none;">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h1 style="color:#fff;"class="section-heading" >You Are What You Eat</h1>
-                    <p style="color:#fff;"class="section-subheading text-muted"; font-family:"Montserrat,Helvetica Neue, Helvetica,Arial,sans-serif"; ><font size="5"><i>What better way is there to share your story with the community than with your best cultural dishes, traditional recipes and culinary passion?</i></font></p>
-                    <p style="color:#fff;"class="text-muted"><font size="5">Hookipa Professionals is a company focused on providing online services and software solutions to home cooks, chefs and food lovers alike. Hookipa Professionals presents 
+                <div class="col-lg-12 text-center" id="portfolio2" style="display: none;">
+                    <h1 style="color:#222;"class="section-heading" >You Are What You Eat</h1>
+                    <p style="color:#222;"class="section-subheading text-muted"; font-family:"Montserrat,Helvetica Neue, Helvetica,Arial,sans-serif"; ><font size="5"><i>What better way is there to share your story with the community than with your best cultural dishes, traditional recipes and culinary passion?</i></font></p>
+                    <p style="color:#222;"class="text-muted"><font size="5">Hookipa Professionals is a company focused on providing online services and software solutions to home cooks, chefs and food lovers alike. Hookipa Professionals presents 
                     its first product, Hookipa, a web and mobile application that provides a platform for chefs to share their recipes, build their online portfolio and offer their culinary talents to the community. 
                     We provide opportunities for users to earn income for serving authentic cultural dishes and an invigorating home cooked experience. 
-             </font></p></div>
+             </font>
+             </p>
+             </div>
             </div>
             <!--div class="row">
                 <div class="col-md-4 col-sm-6 portfolio-item">
@@ -248,7 +327,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about">
+    <section id="about" style="display: none;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -334,7 +413,7 @@
     </section>
 
     <!-- Team Section -->
-    <section id="team" class="bg-light-gray">
+    <section id="team" class="bg-light-gray" style="display: none;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -419,7 +498,7 @@
     </aside>
     
     <!-- Contact Section -->
-    <section id="contact">
+    <section id="contact" style="display: none;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -467,7 +546,7 @@
     </section>
 
     <footer>
-        <div class="container">
+        <div class="container" >
             <div class="row">
                 <div class="col-md-4">
                     <span class="copyright">Copyright &copy; Hookipa Professionals 2016</span>
